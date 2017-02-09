@@ -1,0 +1,6 @@
+C:\Users\Søren\Documents\Visual Studio 2015\Projects\AvisCarRental\WCF_AVIS\WCF_AVIS\bin\WCF_AVIS.dll.config
+C:\Users\Søren\Documents\Visual Studio 2015\Projects\AvisCarRental\WCF_AVIS\WCF_AVIS\bin\WCF_AVIS.dll
+C:\Users\Søren\Documents\Visual Studio 2015\Projects\AvisCarRental\WCF_AVIS\WCF_AVIS\bin\WCF_AVIS.pdb
+C:\Users\Søren\Documents\Visual Studio 2015\Projects\AvisCarRental\WCF_AVIS\WCF_AVIS\obj\Debug\WCF_AVIS.csprojResolveAssemblyReference.cache
+C:\Users\Søren\Documents\Visual Studio 2015\Projects\AvisCarRental\WCF_AVIS\WCF_AVIS\obj\Debug\WCF_AVIS.dll
+C:\Users\Søren\Documents\Visual Studio 2015\Projects\AvisCarRental\WCF_AVIS\WCF_AVIS\obj\Debug\WCF_AVIS.pdb

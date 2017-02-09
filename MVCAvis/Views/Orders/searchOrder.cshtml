@@ -1,0 +1,125 @@
+﻿@model List<MVCAvis.WcfService.Reservation>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <style>
+        .containerClass {
+            float: left;
+            width: 33%;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>searchOrder</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+
+            <h1 style="color:red;"> Avis Biludlejning</h1>
+
+            <div class="containerClass">
+                <h3>Søg Ordre</h3>
+                <form method="post">
+                    <br />
+
+                    Reservationsnummer:<br />
+                    <input type="text" name="searchreservationsnummer">
+                    <br />
+                    <br />
+                    Vælg udlejningsstation:
+                    <br />
+                    <select name="searchstation">
+                       
+                        <option value="KBH">København</option>
+                        <option value="ARH">Århus</option>
+                        <option value="OE1">Odense</option>
+                        <option value="EBJ">Esbjerg</option>
+                        <option value="SLA">Slagelse</option>
+                        <option value="NY3">Nykøbing Falster</option>
+                    </select>
+                    <br />
+                    <br />
+                    Vælg dato for lejemålet:
+                    <br />
+                    Fra:<br />
+                    <input type="date" name="searchdatostart" value="">
+                    <br />
+                    Til:<br />
+                    <input type="date" name="searchdatoslut" value="">
+                    <br />
+                    Fornavn:
+                    <br>
+                    <input type="text" name="searchfirstname" id="firstname" placeholder="Fornavn">
+                    <br>
+                    Efternavn:
+                    <br>
+                    <input type="text" name="searchlastname" id="lastname" placeholder="Efternavn">
+                    <br>
+                    Adresse:
+                    <br>
+                    <input type="text" name="searchaddress" id="address" placeholder="Adresse">
+                    <br>
+                    Telefonnummer:
+                    <br>
+                    <input type="text" name="searchphonenumber" id="phonenumber" placeholder="Telefonnummer">
+                    <br>
+                    E-mail:
+                    <br>
+                    <input type="text" name="searchemail" id="email" placeholder="E-mail">
+                    <br>
+                    <br>
+                    <input type="submit" name="search" id="searchBTN" value="Search" />
+                    <input type="reset" name="search" id="resetBTN" value="Reset" />
+                    <input type="submit" name="search" id="confirmBTN" value="Tilbage" />
+
+                </form>
+            </div>
+            <div class="containerClass">
+                <h3>Search result(s)</h3>
+                <table style="width:100%">
+                    <tr>
+                        <th>Reservationsnummer</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Startdato</th>
+                        <th>Rentalstation</th>
+                        <th>Telefonnummer</th>
+                        <th>E-mail</th>
+                        <th>Status</th>
+                    </tr>
+                    @{
+                        foreach (MVCAvis.WcfService.Reservation reservation in @Model)
+                        {           @*insæt link til EDIT-page*@
+                            <tr onclick="location.href='@Url.Action("editOrder", "Orders", new { reservationNumber=reservation.Reservationsnummer})'"  @*"document.location = 'Orders/editOrder/@reservation.Reservationsnummer'"*@>
+
+                                <td>@reservation.Reservationsnummer</td>
+                                <td>@reservation.Customer.FirstName</td>
+                                <td>@reservation.Customer.LastName</td>
+                                <td>@reservation.StartDate.ToString("dd/MM/yyyy")</td>
+                                <td>@reservation.StartStation.StationCode</td>
+                                <td>@reservation.Customer.TelephoneNumber</td>
+                                <td>@reservation.Customer.Email</td>
+                                <td>@reservation.Status.ToString()</td>
+                            </tr>
+                        }
+                    }
+
+
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

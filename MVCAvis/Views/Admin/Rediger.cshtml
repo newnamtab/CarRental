@@ -1,0 +1,108 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        .containerClass {
+            float: left;
+            width: 50%;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>Rediger</title>
+</head>
+<body>
+    <h1 style="color: red;"> Avis Biludlejning</h1>
+    <h3>Adminside: </h3>
+    <form method="post">
+        <div class="containerClass">
+            <fieldset>
+                <legend>Tilføj medarbejder</legend>
+                <b>Fornavn</b>
+                <br />
+                <input type="text" name="firstname" required placeholder="Fornavn">
+                <br />
+                <b>Efternavn</b>
+                <br />
+                <input type="text" name="lastname" required placeholder="Efternavn">
+                <br />
+                <b>Brugernavn</b>
+                <br />
+                <input type="text" name="username" required placeholder="Brugernavn">
+                <br />
+                <b>Bruger access:</b>
+                <br />
+                <select name="id">
+                    <option value="69">medarbejder access</option>
+                    <option value="11">Admin access</option>
+                </select>
+                <br />
+                <b>Password</b>
+                <br />
+                <input type="text" name="password" required placeholder="Kodeord">
+                <br />
+                <b>Station</b>
+                <br />
+                <select name="station">
+                    <option value="Station1">Station 1</option>
+                    <option value="Station1">Station 2</option>
+                </select>
+                <br />
+                <br />
+                <input type="submit" name="edit" value="Tilføj medarbejder" />
+                <br />
+            </fieldset>
+        </div>
+    </form>
+    <form method="post">
+        <div class="containerClass">
+            <fieldset>
+                <legend>Tilføj Bil</legend>
+                <b>Nummerplade</b>
+                <br />
+                <input type="text" name="licence" required placeholder="Nummerplade">
+                <br />
+                <b>Producent</b>
+                <br />
+                <input type="text" name="producent" required placeholder="Producent">
+                <br />
+                <b>Model</b>
+                <br />
+                <input type="text" name="model" required placeholder="Model">
+                <br />
+                <b>Farve:</b>
+                <br />
+                <input type="text" name="color" required placeholder="Farve">
+                <br />
+                <b>Odometer</b>
+                <br />
+                <input type="text" name="odometer" required placeholder="Odometer">
+                <br />
+                <b>Kategori</b>
+                <br />
+                <select name="cat">
+                    <option value="category1">category 1</option>
+                    <option value="category2">category 2</option>
+                    <option value="category3">category 3</option>
+                    <option value="category4">category 4</option>
+                    <option value="category5">category 5</option>
+                </select>
+                <br />
+                <br />
+                <input type="submit" name="edit" value="Tilføj bil" />
+            </fieldset>
+        </div>
+        <br />
+        <br />
+    </form>
+
+
+
+</body>
+</html>
+

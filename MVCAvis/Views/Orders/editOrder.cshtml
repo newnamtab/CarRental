@@ -1,0 +1,136 @@
+﻿@model MVCAvis.WcfService.Reservation
+@{
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Modify reservation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <h1 style="color:red;"> Avis Biludlejning</h1>
+            <h3>Modify Reservation</h3>
+
+            <form method="post">
+                <div class="containerClass">
+                    Reservationsnummer:
+                    <br />
+                    <input type="text" name="resnumber" value="@Model.Reservationsnummer" readonly>
+                    <br />
+                    <br />
+                    Bilkategori:
+                    <br />
+                    <select name="cat">
+                        <option value="@Model.BilCat.ID">Nuværende kategori: (@Model.BilCat.ID)</option>
+                        <option value="A">Lille bil(A)</option>
+                        <option value="B">Mellem bil(B)</option>
+                        <option value="C">Stor bil(C)</option>
+                        <option value="I">Automatgear(I)</option>
+                        <option value="O">Varevogn(O)</option>
+                    </select>
+                    <br />
+                    <br />
+                    Startdestination:
+                    <br />
+                    <select name="destination">
+                        <option value="@Model.StartStation.StationCode">Nuværende Udlejningsstation: (@Model.StartStation.StationCode)</option>
+                        <option value="KBH">København</option>
+                        <option value="ARH">Århus</option>
+                        <option value="OE1">Odense</option>
+                        <option value="SLA">Slagelse</option>
+                        <option value="NY3">Nykøbing Falster</option>
+                        <option value="EBJ">Esbjerg</option>
+                    </select>
+                    <br />
+                    <br />
+                    Slutdestination:
+                    <br />
+                    <select name="Slutdestination">
+                        <option value="@Model.EndStation.StationCode">Nuværende Afleveringsstation: (@Model.EndStation.StationCode)</option>
+                        <option value="KBH">København</option>
+                        <option value="ARH">Århus</option>
+                        <option value="OE1">Odense</option>
+                        <option value="SLA">Slagelse</option>
+                        <option value="NY3">Nykøbing Falster</option>
+                        <option value="EBJ">Esbjerg</option>
+                    </select>
+                    <br />
+                    <br />
+                    Start og slut dato for lejemålet:
+                    <br />
+                    <input type="datetime" name="datostart" value="@Model.StartDate"> -
+                    <input type="datetime" name="datoslut" value="@Model.EndDate">
+                    <br />
+                    <br />
+                    Forsikring
+                    <br />
+                    <select name="Insurance">
+                        <option value="1500">Forsikringstype 1</option>
+                        <option value="800">Forsikringstype 2</option>
+                        <option value="1200">Forsikringstype 3</option>
+                        <option value="900">Forsikringstype 4</option>
+                        <option value="0">Ingen forsikring</option>
+                    </select>
+                    <br />
+                    <br />
+
+                    <h3>Personinfo</h3>
+
+                    Fornavn:
+                    <br>
+                    <input type="text" name="firstname" id="firstname" value="@Model.Customer.FirstName">
+                    <br>
+                    Efternavn:
+                    <br>
+                    <input type="text" name="lastname" id="lastname" value="@Model.Customer.LastName">
+                    <br>
+                    Address:
+                    <br>
+                    <input type="text" name="address" id="address" value="@Model.Customer.Street">
+                    <br>
+                    Postnummer og by:
+                    <br>
+                    <input type="text" name="postal" id="postalcode" value="@Model.Customer.PostalCode">
+                    <input type="text" name="city" id="city" value="@Model.Customer.City">
+                    <br>
+                    E-mail:
+                    <br>
+                    <input type="text" name="email" id="email" value="@Model.Customer.Email">
+                    <br>
+                    Telefonnummer:
+                    <br>
+                    <input type="text" name="phonenumber" id="phonenumber" value="@Model.Customer.TelephoneNumber">
+                    <br>
+                </div>
+                <br>
+                <div class="containerClass">
+                    <fieldset>
+                        <legend>Tilbuddet</legend>
+                        <p><b>Startdestination: </b>@ViewData["desti"] </p>
+                        <p><b>Slutdestination: </b>@ViewData["Slutdestination"]</p>
+                        <p><b>Startdato: </b>@ViewData["datostart"]</p>
+                        <p><b>Slutdato: </b>@ViewData["datoslut"]</p>
+                        <p><b>Total dage: </b>@ViewData["dage"]</p>
+                        <p><b>Forsikringsomkostninger: </b>@ViewData["forsikring"]</p>
+                        <p><b>Total Pris: </b>@ViewData["pris"]</p>
+                    </fieldset>
+                </div>
+                <input type="submit" name="modify" id="confirmBTN" value="Calculate prize" />
+                <input type="submit" name="modify" id="confirmBTN" value="Modify reservation" />
+                <input type="submit" name="modify" id="resetBTN" value="Reset" />
+                <input type="submit" name="modify" id="deleteBTN" value="Delete"/>
+
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

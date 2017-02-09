@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MenuPage</title>
+</head>
+<body>
+    <h1 style="color:red;"> Avis Biludlejning Menuside</h1>
+    <form method="post">
+
+        <p>Velkommen: @ViewData["ActiveUserName"]</p>
+        <p>Klokken: @ViewData["tiden"]</p>
+
+        <br>
+        <input type="submit" name="redirect" value="Søg bestilling" />
+        <input type="submit" name="redirect" value="Opret bestilling" />
+        <input type="submit" name="redirect" value="Rediger/slet" />
+    </form>
+
+</body>
+</html>

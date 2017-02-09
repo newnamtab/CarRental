@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AVISservice" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:38364/AVISservice.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:38364/AVISservice.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:38364/AVISservice.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_AVIS" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAVISservice_SaveResevation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResevation" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_SaveResevation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResevationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_SearchReservation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchReservation" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_SearchReservation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_CalcPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalcPrice" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_CalcPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalcPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_GetReservations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReservations" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_GetReservations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReservationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_GetStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStations" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_GetStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_MatchStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:MatchStation" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_MatchStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MatchStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_CreateSalt_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSalt" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_CreateSalt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSaltResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_Hasher_InputMessage">
+    <wsdl:part name="parameters" element="tns:Hasher" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_Hasher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HasherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_validateAcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:validateAcess" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_validateAcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:validateAcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_validateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:validateUser" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_validateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:validateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_AddCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCar" />
+  </wsdl:message>
+  <wsdl:message name="IAVISservice_AddCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAVISservice">
+    <wsdl:operation name="SaveResevation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/SaveResevation" message="tns:IAVISservice_SaveResevation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/SaveResevationResponse" message="tns:IAVISservice_SaveResevation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchReservation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/SearchReservation" message="tns:IAVISservice_SearchReservation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/SearchReservationResponse" message="tns:IAVISservice_SearchReservation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/Search" message="tns:IAVISservice_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/SearchResponse" message="tns:IAVISservice_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/Update" message="tns:IAVISservice_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/UpdateResponse" message="tns:IAVISservice_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/Delete" message="tns:IAVISservice_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/DeleteResponse" message="tns:IAVISservice_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalcPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/CalcPrice" message="tns:IAVISservice_CalcPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/CalcPriceResponse" message="tns:IAVISservice_CalcPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReservations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/GetReservations" message="tns:IAVISservice_GetReservations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/GetReservationsResponse" message="tns:IAVISservice_GetReservations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/GetStations" message="tns:IAVISservice_GetStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/GetStationsResponse" message="tns:IAVISservice_GetStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/GetCategories" message="tns:IAVISservice_GetCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/GetCategoriesResponse" message="tns:IAVISservice_GetCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MatchStation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/MatchStation" message="tns:IAVISservice_MatchStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/MatchStationResponse" message="tns:IAVISservice_MatchStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSalt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/CreateSalt" message="tns:IAVISservice_CreateSalt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/CreateSaltResponse" message="tns:IAVISservice_CreateSalt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Hasher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/Hasher" message="tns:IAVISservice_Hasher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/HasherResponse" message="tns:IAVISservice_Hasher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="validateAcess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/validateAcess" message="tns:IAVISservice_validateAcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/validateAcessResponse" message="tns:IAVISservice_validateAcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="validateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/validateUser" message="tns:IAVISservice_validateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/validateUserResponse" message="tns:IAVISservice_validateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/AddUser" message="tns:IAVISservice_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/AddUserResponse" message="tns:IAVISservice_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAVISservice/AddCar" message="tns:IAVISservice_AddCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAVISservice/AddCarResponse" message="tns:IAVISservice_AddCar_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAVISservice" type="tns:IAVISservice">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveResevation">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/SaveResevation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchReservation">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/SearchReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalcPrice">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/CalcPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReservations">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/GetReservations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStations">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/GetStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/GetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatchStation">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/MatchStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSalt">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/CreateSalt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hasher">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/Hasher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateAcess">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/validateAcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateUser">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/validateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCar">
+      <soap:operation soapAction="http://tempuri.org/IAVISservice/AddCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AVISservice">
+    <wsdl:port name="BasicHttpBinding_IAVISservice" binding="tns:BasicHttpBinding_IAVISservice">
+      <soap:address location="http://localhost:38364/AVISservice.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,163 @@
+﻿@model MVCAvis.Models.Orders
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .containerClass {
+            float: left;
+            width: 50%;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>showOffer</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 style="color:red;"> Avis Biludlejning</h1>
+            <h3>Opret Ordre</h3>
+            <form method="post">
+                <div class="containerClass">
+                    Vælg Bilkategori:
+                    <br />
+                    <select name="cat">
+                        @{ foreach (var category in Model.CategoryList)
+                            {
+                                if (category.ID == Model.CurrentReservation.BilCat.ID)
+                                {
+                                    <option selected="selected" value="@category.ID">Kategori: (@category.ID)</option>
+                                }
+                                else
+                                {
+                                    <option value="@category.ID">Kategori: (@category.ID)</option>
+                                }
+
+                            }
+                        }
+
+                        @*<option value="B">Mellem bil(B)</option>
+                            <option value="C">Stor bil(C)</option>
+                            <option value="I">Automatgear(I)</option>
+                            <option value="O">Varevogn(O)</option>*@
+                    </select>
+                    <br />
+                    <br />
+                    Vælg Startdestination:
+                    <br />
+                    <select name="destination">
+                        @{ foreach (var station in Model.StationList)
+                            {
+                                if (station.StationCode == Model.CurrentReservation.StartStation.StationCode)
+                                {
+                                    <option selected="selected" value="@station.StationCode">@station.City : (@station.StationCode)</option>
+                                }
+                                else
+                                {
+                                    <option value="@station.StationCode">@station.City : (@station.StationCode)</option>
+                                }
+
+                            }
+                        }
+
+
+                        @*<option value="ARH">Århus</option>
+                            <option value="OE1">Odense</option>
+                            <option value="SLA">Slagelse</option>
+                            <option value="NY3">Nykøbing Falster</option>
+                            <option value="EBJ">Esbjerg</option>*@
+                    </select>
+                    <br />
+                    <br />
+                    Vælg Slutdestination:
+                    <br />
+                    <select name="Slutdestination">
+                        @{ foreach (var station in Model.StationList)
+                            {
+                                if (station.StationCode == Model.CurrentReservation.EndStation.StationCode)
+                                {
+                                    <option selected="selected" value="@station.StationCode">@station.City : (@station.StationCode)</option>
+                                }
+                                else
+                                {
+                                    <option value="@station.StationCode">@station.City : (@station.StationCode)</option>
+                                }
+                            }
+                        }
+                        @*<option value="KBH">København</option>
+                            <option value="ARH">Århus</option>
+                            <option value="OE1">Odense</option>
+                            <option value="SLA">Slagelse</option>
+                            <option value="NY3">Nykøbing Falster</option>
+                            <option value="EBJ">Esbjerg</option>*@
+                    </select>
+                    <br />
+                    <br />
+                    Vælg start og slut dato for lejemålet:
+                    <br />
+                    <input type="datetime" name="datostart" value="@Model.CurrentReservation.StartDate"> -
+                    <input type="datetime" name="datoslut" value="@Model.CurrentReservation.EndDate">
+                    <br />
+                    <br />
+                    Vælg forsikring
+                    <br />
+                    <select name="Insurance">
+                        <option value="1500">Forsikringstype 1</option>
+                        <option value="800">Forsikringstype 2</option>
+                        <option value="1200">Forsikringstype 3</option>
+                        <option value="900">Forsikringstype 4</option>
+                        <option value="0">Ingen forsikring</option>
+                    </select>
+                    <br />
+                    <br />
+                    <h3>Personinfo</h3>
+                    Fornavn:
+                    <br>
+                    <input type="text" name="firstname" id="firstname" value="@Model.CurrentReservation.Customer.FirstName" placeholder="Fornavn">
+                    <br>
+                    Efternavn:
+                    <br>
+                    <input type="text" name="lastname" id="lastname" value="@Model.CurrentReservation.Customer.LastName" placeholder="Efternavn">
+                    <br>
+                    Address:
+                    <br>
+                    <input type="text" name="address" id="address" value="@Model.CurrentReservation.Customer.Street" placeholder="Adresse">
+                    <br>
+                    Postnummer og by:
+                    <br>
+                    <input type="text" name="postal" id="postalcode" value="@Model.CurrentReservation.Customer.PostalCode" placeholder="Postnummer">
+                    <input type="text" name="city" id="city" value="@Model.CurrentReservation.Customer.City" placeholder="By">
+                    <br>
+                    E-mail:
+                    <br>
+                    <input type="text" name="email" id="email" value="@Model.CurrentReservation.Customer.Email" placeholder="E-mail">
+                    <br>
+                    Telefonnummer:
+                    <br>
+                    <input type="text" name="phonenumber" id="phonenumber" value="@Model.CurrentReservation.Customer.TelephoneNumber" placeholder="Telefonnummer">
+                    <br>
+                </div>
+                <br>
+                <div class="containerClass">
+                    <fieldset>
+                        <legend>Tilbuddet</legend>
+                        <p><b>Startdestination: </b>@ViewData["desti"] </p>
+                        <p><b>Slutdestination: </b>@ViewData["Slutdesti"]</p>
+                        <p><b>Startdato: </b>@ViewData["startdato"]</p>
+                        <p><b>Slutdato: </b>@ViewData["slutdato"]</p>
+                        <p><b>Total dage: </b>@ViewData["dage"]</p>
+                        <p><b>Forsikringsomkostninger: </b>@ViewData["forsikring"]</p>
+                        <p><b>Total Pris: </b>@ViewData["pris"]</p>
+                    </fieldset>
+                </div>
+                <input type="submit" name="confirm" id="confirmBTN" value="Calculate prize" />
+                <input type="submit" name="confirm" id="confirmBTN" value="Create order" />
+                <input type="reset" name="confirm" id="resetBTN" value="Reset" />
+                <input type="submit" name="confirm" value="Tilbage" />
+            </form>
+        </div>
+    </div>
+</body>
+</html>

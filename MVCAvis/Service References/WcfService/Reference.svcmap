@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8c3ecb2d-9900-4864-ba69-0796a2bfd2fe" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:38364/AVISservice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AVISservice.xsd" MetadataType="Schema" ID="e4e84969-faf0-49b7-8215-59c62c8ff649" SourceId="1" SourceUrl="http://localhost:38364/AVISservice.svc?xsd=xsd2" />
+    <MetadataFile FileName="AVISservice1.xsd" MetadataType="Schema" ID="12b22e37-c88d-4773-8a9c-bafb2a3354a4" SourceId="1" SourceUrl="http://localhost:38364/AVISservice.svc?xsd=xsd0" />
+    <MetadataFile FileName="AVISservice.wsdl" MetadataType="Wsdl" ID="26992e24-3945-4ebd-96f5-0dc24a404342" SourceId="1" SourceUrl="http://localhost:38364/AVISservice.svc?wsdl" />
+    <MetadataFile FileName="AVISservice.disco" MetadataType="Disco" ID="fac2800e-76d8-417c-8674-71a581dd3bad" SourceId="1" SourceUrl="http://localhost:38364/AVISservice.svc?disco" />
+    <MetadataFile FileName="AVISservice2.xsd" MetadataType="Schema" ID="ac61d2e8-5be1-404e-872f-2cd74a4a75a2" SourceId="1" SourceUrl="http://localhost:38364/AVISservice.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
